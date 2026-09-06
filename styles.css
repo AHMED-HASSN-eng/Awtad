@@ -339,6 +339,13 @@ section {
   transition: stroke 0.2s var(--ease);
 }
 
+.topbar-social a .social-icon,
+.footer-social a .social-icon {
+  fill: var(--text-muted);
+  stroke: none;
+  transition: fill 0.2s var(--ease);
+}
+
 .topbar-social a:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
@@ -346,6 +353,11 @@ section {
 
 .topbar-social a:hover svg {
   stroke: var(--accent);
+}
+
+.topbar-social a:hover .social-icon,
+.footer-social a:hover .social-icon {
+  fill: var(--accent);
 }
 
 @media (max-width: 640px) {
@@ -385,14 +397,28 @@ section {
 }
 
 .brand-mark {
-  width: 40px;
-  height: 40px;
+  width: 96px;
+  height: 54px;
   flex-shrink: 0;
+  display: block;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
 }
 
 .brand-mark svg {
   width: 100%;
   height: 100%;
+}
+
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
 }
 
 .brand-name span {
@@ -1136,13 +1162,24 @@ section {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.8fr 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr 1fr;
   gap: 36px;
   padding-bottom: 48px;
 }
 
 .footer-brand .brand {
   margin-bottom: 16px;
+}
+
+.footer-brand .brand-mark {
+  width: 180px;
+  height: 101px;
+}
+
+.footer-brand .brand-mark img {
+  width: 100%;
+  height: 100%;
+  transform: none;
 }
 
 .footer-brand p {
